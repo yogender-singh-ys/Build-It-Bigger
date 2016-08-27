@@ -2,6 +2,7 @@ package com.example.yogender.finalproject;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 
 import com.example.yogenders.myapplication.backend.noteApi.NoteApi;
@@ -29,7 +30,7 @@ class EndpointsAsyncTask extends AsyncTask<String, Void, List<Note>> {
     @Override
     protected List<Note> doInBackground(String... params) {
 
-       // Log.e("Error",params[0].second);
+        Log.e("Error",params[0]);
 
         if(myApiService == null) {  // Only do this once
             NoteApi.Builder builder = new NoteApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
@@ -48,7 +49,6 @@ class EndpointsAsyncTask extends AsyncTask<String, Void, List<Note>> {
             myApiService = builder.build();
         }
 
-
         try {
 
 
@@ -64,12 +64,9 @@ class EndpointsAsyncTask extends AsyncTask<String, Void, List<Note>> {
     protected void onPostExecute(List<Note> noteList) {
 
         // Setup Intent Extra to be shared with Android Library
-
         // displayed only first joke desc
         Note note = noteList.get(0);
-
-        String str = "Joke Desc ::" + note.getTitle();
-
+        String str =  note.getDescription();
         jokeLoadListner.jokeLoadTaskHandler(str);
 
     }

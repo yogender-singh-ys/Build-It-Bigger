@@ -21,3 +21,27 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+
+task runAppEngine (dependsOn: ":backend:appengineRun") {
+    project(":JokeAPI").afterEvaluate { backend ->
+        backend.extensions.appengine.daemon = true
+    }
+    doLast {
+        println "started the server!"
+    }
+}
+
+task runAllTests(dependsOn: [':app:check', ':app:connectedCheck']) {
+    doLast {
+        println "Completed running tests."
+    }
+}
+
+task runAllTestsWithServer(dependsOn: ['startServer', 'runAllTests']) {
+    group = "verification"
+    mustRunAfter "startServer"
+    tasks.runAllTests.mustRunAfter "startServer"
+    finalizedBy ":jokeendpoint:appengineStop"
+}
+

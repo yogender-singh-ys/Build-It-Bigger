@@ -4,8 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FinalProject.iml" filepath="$PROJECT_DIR$/FinalProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/JokeAPI/JokeAPI.iml" filepath="$PROJECT_DIR$/JokeAPI/JokeAPI.iml" />
-      <module fileurl="file://$PROJECT_DIR$/JokeProvider/jokeprovider.iml" filepath="$PROJECT_DIR$/JokeProvider/jokeprovider.iml" />
-      <module fileurl="file://$PROJECT_DIR$/JokeViewer/jokeviewer.iml" filepath="$PROJECT_DIR$/JokeViewer/jokeviewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JokeProvider/JokeProvider.iml" filepath="$PROJECT_DIR$/JokeProvider/JokeProvider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JokeViewer/JokeViewer.iml" filepath="$PROJECT_DIR$/JokeViewer/JokeViewer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
