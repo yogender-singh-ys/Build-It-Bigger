@@ -35,6 +35,6 @@ dependencies {
     compile project(path: ':JokeAPI', configuration: 'android-endpoints')
 
     compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.google.android.gms:play-services-ads:9.4.0'
+    freeCompile 'com.google.android.gms:play-services-ads:9.4.0'
 
 }
